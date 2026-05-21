@@ -66,7 +66,7 @@ function animateCursor() {
 }
 animateCursor();
 
-document.querySelectorAll('a, button, .menu-card, .mini-card, .feature, .problem-card, .feat-card, .tab, .price-card, .pillar').forEach(el => {
+document.querySelectorAll('a, button, .benefit-card, .price-card, .contact-btn').forEach(el => {
   el.addEventListener('mouseenter', () => cursor && cursor.classList.add('grow'));
   el.addEventListener('mouseleave', () => cursor && cursor.classList.remove('grow'));
 });
@@ -89,10 +89,9 @@ function onScroll() {
     backTop.classList.toggle('show', sy > 600);
   }
   updateActiveLink();
-  parallax();
   heroParallax();
   scrollSections();
-  aboutParallax();
+  pricingParallax();
 }
 
 window.addEventListener('scroll', onScroll, { passive: true });
@@ -161,101 +160,47 @@ reveals.forEach((el, i) => {
   observer.observe(el);
 });
 
-document.querySelectorAll('.feat-card').forEach((el, i) => {
-  el.style.transitionDelay = (i * 0.06) + 's';
-});
-
-document.querySelectorAll('.problem-card').forEach((el, i) => {
-  el.style.transitionDelay = (i * 0.1) + 's';
+document.querySelectorAll('.benefit-card').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.08) + 's';
 });
 
 document.querySelectorAll('.price-card').forEach((el, i) => {
   el.style.transitionDelay = (i * 0.15) + 's';
 });
 
-document.querySelectorAll('.t-item').forEach((el, i) => {
-  el.style.transitionDelay = (i * 0.12) + 's';
-});
-
-// ====== COUNTERS ======
-const counters = document.querySelectorAll('.counter');
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseInt(el.dataset.target, 10);
-      const duration = 1600;
-      const start = performance.now();
-      function tick(now) {
-        const p = Math.min(1, (now - start) / duration);
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.floor(eased * target).toLocaleString();
-        if (p < 1) requestAnimationFrame(tick);
-        else el.textContent = target.toLocaleString();
-      }
-      requestAnimationFrame(tick);
-      counterObserver.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
-counters.forEach(c => counterObserver.observe(c));
-
 // ====== HERO PARALLAX ======
-const heroBrand = document.getElementById('heroBrand');
+const heroLogoWrap = document.getElementById('heroLogoWrap');
 
 function heroParallax() {
-  if (!heroBrand) return;
+  if (!heroLogoWrap) return;
   const sy = window.scrollY;
   if (sy < window.innerHeight) {
-    heroBrand.style.transform = `translateY(${sy * 0.12}px)`;
+    heroLogoWrap.style.transform = `translateY(${sy * 0.14}px) rotate(${sy * -0.012}deg)`;
   }
 }
 
-// ====== MOUSE TILT ON HERO BRAND ======
-const heroHead = document.querySelector('.hero-head');
-if (heroHead && heroBrand) {
-  heroHead.addEventListener('mousemove', (e) => {
-    const rect = heroHead.getBoundingClientRect();
+// ====== MOUSE TILT ON HERO LOGO ======
+const heroVisual = document.querySelector('.hero-visual');
+if (heroVisual && heroLogoWrap) {
+  heroVisual.addEventListener('mousemove', (e) => {
+    const rect = heroVisual.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    heroBrand.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${y * -8}deg)`;
+    heroLogoWrap.style.transform = `perspective(900px) rotateY(${x * 10}deg) rotateX(${y * -10}deg) scale(1.02)`;
   });
-  heroHead.addEventListener('mouseleave', () => {
-    heroBrand.style.transform = '';
+  heroVisual.addEventListener('mouseleave', () => {
+    heroLogoWrap.style.transform = '';
   });
 }
 
-// ====== STORY PARALLAX ======
-const pBg = document.querySelector('.p-bg');
-const pMid = document.querySelector('.p-mid');
-const pFront = document.querySelector('.p-front');
-
-function parallax() {
-  const story = document.querySelector('.story');
-  if (!story) return;
-  const rect = story.getBoundingClientRect();
-  if (rect.top >= window.innerHeight || rect.bottom <= 0) return;
-  const offset = rect.top * 0.3;
-  if (pBg) pBg.style.transform = `translateY(${offset * 0.2}px)`;
-  if (pMid) pMid.style.transform = `translateY(${offset * 0.5}px)`;
-  if (pFront) pFront.style.transform = `translateY(${offset * 0.8}px)`;
-
+function pricingParallax() {
   const pricing = document.querySelector('.pricing-glow');
-  if (pricing) {
-    const pRect = document.querySelector('.pricing')?.getBoundingClientRect();
-    if (pRect && pRect.top < window.innerHeight && pRect.bottom > 0) {
-      pricing.style.transform = `translateY(${pRect.top * 0.15}px) scale(${1 + Math.min(0.08, Math.abs(pRect.top) * 0.0001)})`;
-    }
+  const section = document.querySelector('.pricing');
+  if (!pricing || !section) return;
+  const rect = section.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    pricing.style.transform = `translateY(${rect.top * 0.12}px)`;
   }
-}
-
-function aboutParallax() {
-  const visual = document.querySelector('.about-visual');
-  if (!visual) return;
-  const rect = visual.getBoundingClientRect();
-  if (rect.top >= window.innerHeight || rect.bottom <= 0) return;
-  const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-  visual.style.transform = `translateY(${(0.5 - progress) * 40}px) rotate(${(0.5 - progress) * 2}deg)`;
 }
 
 function scrollSections() {
@@ -267,30 +212,8 @@ function scrollSections() {
   });
 }
 
-// ====== BUSINESS MODE TABS ======
-const tabs = document.querySelectorAll('.tab');
-const modeCards = document.querySelectorAll('.menu-card');
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const cat = tab.dataset.cat;
-    modeCards.forEach(card => {
-      if (card.dataset.cat === cat) {
-        card.classList.remove('hidden');
-        card.classList.remove('visible');
-        requestAnimationFrame(() => card.classList.add('visible'));
-      } else {
-        card.classList.add('hidden');
-        card.classList.remove('visible');
-      }
-    });
-  });
-});
-
 // ====== 3D TILT ON CARDS ======
-document.querySelectorAll('.menu-card-inner, .problem-card, .feat-card, .price-card, .pillar').forEach(card => {
+document.querySelectorAll('[data-tilt]').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -302,7 +225,7 @@ document.querySelectorAll('.menu-card-inner, .problem-card, .feat-card, .price-c
   });
 });
 
-// ====== GET STARTED BUTTON ======
+// ====== START PILOT BUTTON ======
 const startBtn = document.getElementById('startBtn');
 if (startBtn) {
   startBtn.addEventListener('click', () => {
@@ -345,7 +268,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.solution, .problem, .pricing, .features-section').forEach(section => {
+document.querySelectorAll('.product, .pricing').forEach(section => {
   sectionObserver.observe(section);
 });
 

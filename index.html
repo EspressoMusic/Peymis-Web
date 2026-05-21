@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Peymiz — One Simple Link for Your Small Business</title>
-  <meta name="description" content="Peymiz helps small businesses manage orders, appointments, customer messages, and business activity from one clean dashboard." />
+  <meta name="description" content="Peymiz gives small businesses one digital page, one shareable link, and one dashboard for orders, bookings, and customer messages." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="images/logo-transparent.png" />
-  <link rel="apple-touch-icon" href="images/logo-transparent.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/logo-transparent.png?v=9" />
+  <link rel="apple-touch-icon" href="images/logo-transparent.png?v=9" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,11 +19,13 @@
   <div class="scroll-progress" id="scrollProgress"></div>
 
   <div class="loader" id="loader">
-    <div class="loader-icon">
-      <img src="images/logo-transparent.png" alt="" />
-      <div class="loader-ring"></div>
+    <div class="loader-inner">
+      <div class="loader-mark">
+        <div class="loader-ring" aria-hidden="true"></div>
+        <img src="images/hero-logo-transparent.png?v=8" alt="" class="loader-logo" />
+      </div>
+      <p class="loader-text">Loading Peymiz...</p>
     </div>
-    <p class="loader-text">Setting up your business page...</p>
   </div>
 
   <div class="particles-bg" aria-hidden="true">
@@ -41,18 +43,14 @@
     <div class="container nav-inner">
       <a href="#home" class="logo">
         <span class="logo-mark">
-          <img src="images/logo-transparent.png" alt="Peymiz" class="logo-img" />
+          <img src="images/logo-transparent.png?v=9" alt="Peymiz" class="logo-img" />
         </span>
         <span class="logo-text">Pey<span>miz</span></span>
       </a>
 
       <nav class="nav-links" id="navLinks">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#problem">Problem</a>
-        <a href="#how">How It Works</a>
-        <a href="#modes">Business Modes</a>
-        <a href="#features">Features</a>
+        <a href="#product">Product &amp; Benefits</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -62,7 +60,7 @@
           <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <button class="btn btn-primary nav-cta" id="startBtn">Get Started</button>
+        <button class="btn btn-primary nav-cta" id="startBtn">Start Pilot</button>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -91,322 +89,89 @@
 
     <div class="container hero-grid">
       <div class="hero-content">
-        <span class="eyebrow" data-reveal>One simple link for your small business</span>
-
-        <div class="hero-head" data-reveal>
-          <div class="hero-brand" id="heroBrand">
-            <img src="images/logo-transparent.png" alt="" class="hero-brand-icon" aria-hidden="true" />
-            <img src="images/logo-wordmark-hero-transparent.png" alt="Peymiz" class="hero-brand-wordmark" />
-          </div>
-          <h1 class="hero-title">
-            <span class="title-line">Manage</span>
-            <span class="title-line accent">Your Business</span>
-          </h1>
-        </div>
-        <p class="hero-sub" data-reveal>
-          One link. One dashboard. Manage orders, appointments, and messages — without building your own app.
+        <h1 class="hero-brand" data-reveal="left">
+          <img src="images/peymiz-wordmark.png?v=4" alt="Peymiz" class="hero-wordmark" />
+        </h1>
+        <p class="hero-tagline" data-reveal="left">One simple link for your small business.</p>
+        <p class="hero-sub" data-reveal="left">
+          Manage orders, bookings, and customer messages from one clean dashboard.
         </p>
 
-        <div class="mini-menu" data-reveal>
-          <div class="mini-card" data-reveal="scale">
-            <div class="mini-icon">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            </div>
-            <h4>One Link</h4>
-          </div>
-          <div class="mini-card" data-reveal="scale">
-            <div class="mini-icon">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            </div>
-            <h4>One Dashboard</h4>
-          </div>
-          <div class="mini-card" data-reveal="scale">
-            <div class="mini-icon">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h4>Fast Setup</h4>
-          </div>
-        </div>
-
-        <div class="hero-cta" data-reveal>
+        <div class="hero-cta" data-reveal="left">
           <a href="#pricing" class="btn btn-primary btn-big">
-            <span>View Plans</span>
+            <span>Start Pilot</span>
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#how" class="btn btn-ghost">How It Works</a>
+          <a href="#contact" class="btn btn-ghost">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal="scale">
+        <div class="hero-logo-wrap" id="heroLogoWrap">
+          <img src="images/hero-logo-transparent.png?v=8" alt="Peymiz logo" class="hero-logo-giant" id="heroLogoGiant" />
         </div>
       </div>
     </div>
 
-    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+    <a href="#product" class="scroll-indicator" aria-label="Scroll down">
       <div class="mouse"><div class="wheel"></div></div>
-      <span>Scroll to explore</span>
+      <span>Scroll</span>
     </a>
   </section>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>★ One Business Page</span>
-      <span>★ One Shareable Link</span>
-      <span>★ One Dashboard</span>
-      <span>★ Product Store</span>
-      <span>★ Appointment Booking</span>
-      <span>★ Customer Messages</span>
-      <span>★ Built for Small Business</span>
-      <span>★ One Business Page</span>
-      <span>★ One Shareable Link</span>
-      <span>★ One Dashboard</span>
-      <span>★ Product Store</span>
-      <span>★ Appointment Booking</span>
-      <span>★ Customer Messages</span>
-      <span>★ Built for Small Business</span>
-    </div>
-  </div>
-
-  <section class="about" id="about">
-    <div class="container about-grid">
-      <div class="about-visual" data-reveal>
-        <div class="img-stack">
-          <div class="img-card img-1">
-            <img src="images/logo-transparent.png" alt="Peymiz app icon" />
-          </div>
-          <div class="img-card img-2">
-            <img src="images/logo-wordmark-hero-transparent.png" alt="Peymiz wordmark" />
-          </div>
-          <div class="img-card img-3">
-            <img src="images/logo-transparent.png" alt="Peymiz logo" />
-          </div>
-          <div class="years-badge">
-            <strong>1</strong>
-            <span>Link for <br/> Everything</span>
-          </div>
-        </div>
-      </div>
-      <div class="about-content">
-        <span class="section-eyebrow" data-reveal="left">What is Peymiz?</span>
-        <h2 class="section-title" data-reveal="left">Your business. <em>One link.</em></h2>
-        <p class="section-lead" data-reveal="left">
-          A digital page, shareable link, and dashboard — so customers can order, book, or message you in one place.
+  <section class="product" id="product">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow" data-reveal="scale">Product &amp; Benefits</span>
+        <h2 class="section-title center" data-reveal="scale">Everything you need. <em>Nothing extra.</em></h2>
+        <p class="section-lead center" data-reveal>
+          Peymiz helps small businesses run online without building a custom app or juggling too many tools.
         </p>
-        <div class="features">
-          <div class="feature" data-reveal="left">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div><h4>Business Page</h4></div>
-          </div>
-          <div class="feature" data-reveal="left">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            </div>
-            <div><h4>Shareable Link</h4></div>
-          </div>
-          <div class="feature" data-reveal="left">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <div><h4>Owner Dashboard</h4></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats">
-    <div class="container stats-grid">
-      <div class="stat" data-reveal>
-        <strong class="counter" data-target="1">0</strong>
-        <span>Business page</span>
-      </div>
-      <div class="stat" data-reveal>
-        <strong class="counter" data-target="1">0</strong>
-        <span>Shareable link</span>
-      </div>
-      <div class="stat" data-reveal>
-        <strong class="counter" data-target="1">0</strong>
-        <span>Dashboard</span>
-      </div>
-      <div class="stat" data-reveal>
-        <strong class="counter" data-target="2">0</strong>
-        <span>Business modes</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="problem" id="problem">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-eyebrow" data-reveal="scale">The Problem</span>
-        <h2 class="section-title center" data-reveal="scale">Too many tools. <em>Too much chaos.</em></h2>
-      </div>
-      <div class="problem-grid">
-        <article class="problem-card" data-reveal="left">
-          <div class="problem-icon">01</div>
-          <h3>Orders get lost</h3>
-        </article>
-        <article class="problem-card" data-reveal="right">
-          <div class="problem-icon">02</div>
-          <h3>Messy appointments</h3>
-        </article>
-        <article class="problem-card" data-reveal="left">
-          <div class="problem-icon">03</div>
-          <h3>Scattered messages</h3>
-        </article>
-        <article class="problem-card" data-reveal="right">
-          <div class="problem-icon">04</div>
-          <h3>Expensive custom apps</h3>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="solution" id="solution">
-    <div class="container solution-inner" data-reveal>
-      <span class="section-eyebrow light" data-reveal="scale">The Solution</span>
-      <h2 class="section-title light center" data-reveal="scale">One page. One link. <em>One dashboard.</em></h2>
-      <div class="solution-pillars">
-        <div class="pillar" data-reveal>
-          <strong>One</strong>
-          <span>Business Page</span>
-        </div>
-        <div class="pillar" data-reveal>
-          <strong>One</strong>
-          <span>Shareable Link</span>
-        </div>
-        <div class="pillar" data-reveal>
-          <strong>One</strong>
-          <span>Dashboard</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="story" id="how">
-    <div class="story-parallax">
-      <div class="parallax-layer p-bg"></div>
-      <div class="parallax-layer p-mid"></div>
-      <div class="parallax-layer p-front"></div>
-    </div>
-    <div class="container story-content">
-      <span class="section-eyebrow light" data-reveal>How It Works</span>
-      <h2 class="section-title light center" data-reveal="scale">Four steps. <em>Done.</em></h2>
-      <div class="timeline">
-        <div class="t-line"></div>
-        <div class="t-item" data-reveal="left">
-          <div class="t-dot">01</div>
-          <div class="t-body"><h4>Create your page</h4></div>
-        </div>
-        <div class="t-item" data-reveal="right">
-          <div class="t-dot">02</div>
-          <div class="t-body"><h4>Pick your mode</h4></div>
-        </div>
-        <div class="t-item" data-reveal="left">
-          <div class="t-dot">03</div>
-          <div class="t-body"><h4>Share your link</h4></div>
-        </div>
-        <div class="t-item" data-reveal="right">
-          <div class="t-dot">04</div>
-          <div class="t-body"><h4>Manage everything</h4></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="menu modes" id="modes">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-eyebrow" data-reveal>Business Modes</span>
-        <h2 class="section-title center" data-reveal="scale">Products or <em>services</em></h2>
       </div>
 
-      <div class="menu-tabs" data-reveal>
-        <button class="tab active" data-cat="store">Product Store</button>
-        <button class="tab" data-cat="booking">Appointment Booking</button>
-      </div>
-
-      <div class="menu-grid" id="modesGrid">
-        <article class="menu-card" data-cat="store" data-reveal="scale">
-          <div class="menu-card-inner">
-            <div class="menu-icon">
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            </div>
-            <div class="menu-info">
-              <h3>Bakeries &amp; Food</h3>
-            </div>
+      <div class="benefits-grid">
+        <article class="benefit-card" data-reveal="scale" data-tilt>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
+          <h3>One digital business page</h3>
+          <p>Your brand, services, and contact info in one clean place.</p>
         </article>
-        <article class="menu-card" data-cat="store" data-reveal="scale">
-          <div class="menu-card-inner">
-            <div class="menu-icon">
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H21.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/><path d="M4 10v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10"/></svg>
-            </div>
-            <div class="menu-info">
-              <h3>Shops &amp; Clothing</h3>
-            </div>
+        <article class="benefit-card" data-reveal="scale" data-tilt>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </div>
+          <h3>One shareable link</h3>
+          <p>Send one link on Instagram, WhatsApp, or anywhere customers find you.</p>
         </article>
-        <article class="menu-card" data-cat="store" data-reveal="scale">
-          <div class="menu-card-inner">
-            <div class="menu-icon">
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            </div>
-            <div class="menu-info">
-              <h3>Home Sellers</h3>
-            </div>
+        <article class="benefit-card" data-reveal="scale" data-tilt>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           </div>
+          <h3>One dashboard</h3>
+          <p>See orders, bookings, and messages in one simple owner view.</p>
         </article>
-
-        <article class="menu-card hidden" data-cat="booking" data-reveal>
-          <div class="menu-card-inner">
-            <div class="menu-icon">
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-            </div>
-            <div class="menu-info">
-              <h3>Barbers &amp; Salons</h3>
-            </div>
+        <article class="benefit-card" data-reveal="scale" data-tilt>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           </div>
+          <h3>Store or booking</h3>
+          <p>Sell products or take appointments — pick what fits your business.</p>
         </article>
-        <article class="menu-card hidden" data-cat="booking" data-reveal="scale">
-          <div class="menu-card-inner">
-            <div class="menu-icon">
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            </div>
-            <div class="menu-info">
-              <h3>Consultants</h3>
-            </div>
+        <article class="benefit-card" data-reveal="scale" data-tilt>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
+          <h3>No expensive custom app</h3>
+          <p>Skip long builds and high development costs.</p>
         </article>
-        <article class="menu-card hidden" data-cat="booking" data-reveal="scale">
-          <div class="menu-card-inner">
-            <div class="menu-icon">
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </div>
-            <div class="menu-info">
-              <h3>Treatments</h3>
-            </div>
+        <article class="benefit-card" data-reveal="scale" data-tilt>
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
+          <h3>Simple setup</h3>
+          <p>Built for small businesses that want to start fast and stay organized.</p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="features-section" id="features">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-eyebrow" data-reveal="scale">Key Features</span>
-        <h2 class="section-title center" data-reveal="scale">All you <em>need</em></h2>
-      </div>
-      <div class="features-grid">
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">📄</div><h4>Business page</h4></div>
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">🔗</div><h4>Shareable link</h4></div>
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">🛍️</div><h4>Product catalog</h4></div>
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">📅</div><h4>Appointments</h4></div>
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">💬</div><h4>Messages</h4></div>
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">📊</div><h4>Dashboard</h4></div>
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">🔄</div><h4>Mode switch</h4></div>
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">⚡</div><h4>Smart links</h4></div>
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">🛡️</div><h4>Admin control</h4></div>
-        <div class="feat-card" data-reveal="scale"><div class="feat-icon">☁️</div><h4>Cloud database</h4></div>
       </div>
     </div>
   </section>
@@ -416,102 +181,95 @@
     <div class="container">
       <div class="section-head">
         <span class="section-eyebrow" data-reveal="scale">Pricing</span>
-        <h2 class="section-title center" data-reveal="scale">Pick your <em>plan</em></h2>
+        <h2 class="section-title center" data-reveal="scale">Start free. <em>Scale later.</em></h2>
       </div>
       <div class="pricing-grid">
-        <article class="price-card" data-reveal="left" data-tilt>
-          <div class="price-badge">Premium</div>
-          <div class="price-amount"><span class="currency">$</span><strong>50</strong><span class="period">/mo</span></div>
-          <ul class="price-features">
-            <li>Business page + link</li>
-            <li>Product store or booking</li>
-            <li>Owner dashboard</li>
-            <li>Customer messages</li>
-            <li>Cloud database</li>
-          </ul>
-          <a href="#contact" class="btn btn-ghost price-btn">Get Premium</a>
-        </article>
         <article class="price-card featured" data-reveal="scale" data-tilt>
-          <div class="price-badge popular">Ultimate</div>
-          <div class="price-amount"><span class="currency">$</span><strong>100</strong><span class="period">/mo</span></div>
+          <div class="price-badge popular">Pilot Plan</div>
+          <div class="price-amount price-free"><strong>Free</strong><span class="period">during pilot</span></div>
           <ul class="price-features">
-            <li>Everything in Premium</li>
-            <li>Both business modes</li>
-            <li>Smart links</li>
-            <li>Admin control</li>
-            <li>Priority support</li>
+            <li>Full Peymiz access</li>
+            <li>Business page + link</li>
+            <li>Dashboard for orders &amp; messages</li>
+            <li>Product store or booking</li>
           </ul>
-          <a href="#contact" class="btn btn-primary price-btn">Get Ultimate</a>
+          <a href="#contact" class="btn btn-primary price-btn">Join the Pilot</a>
+        </article>
+        <article class="price-card" data-reveal="left" data-tilt>
+          <div class="price-badge">Future Plan</div>
+          <div class="price-amount price-soon">
+            <strong>Coming soon</strong>
+            <span class="period">monthly subscription</span>
+          </div>
+          <ul class="price-features">
+            <li>Same simple Peymiz experience</li>
+            <li>Monthly subscription</li>
+            <li>Price coming soon</li>
+            <li>For businesses ready to grow</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost price-btn">Get Updates</a>
         </article>
       </div>
+      <p class="pricing-note" data-reveal>No commitment during pilot.</p>
     </div>
   </section>
 
-  <section class="cta-section" id="contact">
-    <div class="container cta-inner">
-      <div class="cta-content" data-reveal="left">
-        <h2 class="section-title light">Start with <em>Peymiz</em></h2>
-        <p>One link. One dashboard. Join the waitlist today.</p>
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy" data-reveal="left">
+        <span class="section-eyebrow light">Contact</span>
+        <h2 class="section-title light">Interested in trying <em>Peymiz?</em></h2>
+        <p class="contact-lead">Contact us to join the pilot and get your business online with one simple link.</p>
+
+        <div class="contact-channels">
+          <a href="mailto:hello@peymiz.com" class="contact-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+            Email
+          </a>
+          <a href="https://wa.me/" class="contact-btn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.463 3.67 1.28 5.24L2 22l4.88-1.28A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+            WhatsApp
+          </a>
+          <a href="#" class="contact-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            Instagram
+          </a>
+        </div>
       </div>
-      <form class="cta-form" data-reveal onsubmit="event.preventDefault(); this.querySelector('button').textContent='You\'re on the list ✦'; this.querySelector('input').value=''">
-        <input type="email" placeholder="Your email address" required />
-        <button class="btn btn-primary" type="submit">Get Early Access</button>
+
+      <form class="contact-form" data-reveal="right" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Message sent ✓'; this.reset();">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@business.com" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Tell us about your business..." required></textarea>
+        </label>
+        <button class="btn btn-primary btn-big" type="submit">Send Message</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <a href="#home" class="logo logo-foot">
-          <span class="logo-mark">
-            <img src="images/logo-transparent.png" alt="Peymiz" class="logo-img" />
-          </span>
-          <span class="logo-text">Pey<span>miz</span></span>
-        </a>
-        <p>One simple link for your small business.</p>
-        <div class="socials">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 5.8c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1A4.1 4.1 0 0 0 11.8 9c0 .3 0 .6.1.9A11.7 11.7 0 0 1 3.4 5.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4-.7.2-1.4.2-2 .1.5 1.7 2.1 2.9 4 2.9A8.2 8.2 0 0 1 2 19.4 11.6 11.6 0 0 0 8.3 21c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2z"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Platform</h4>
-        <ul>
-          <li><a href="#about">About Peymiz</a></li>
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#modes">Business Modes</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>For Business</h4>
-        <ul>
-          <li><a href="#modes">Product Store</a></li>
-          <li><a href="#modes">Appointment Booking</a></li>
-          <li><a href="#pricing">Get Started</a></li>
-          <li><a href="#">Support</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p>hello@peymiz.com</p>
-        <form class="foot-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent ✓'; this.reset()">
-          <textarea placeholder="Tell us about your business..." rows="3" required></textarea>
-          <button class="btn btn-primary" type="submit">Send Message</button>
-        </form>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>© 2026 Peymiz. One link. One dashboard. Simple business management.</p>
-        <div>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-        </div>
-      </div>
+    <div class="container footer-simple">
+      <a href="#home" class="logo logo-foot">
+        <span class="logo-mark">
+          <img src="images/logo-transparent.png?v=9" alt="Peymiz" class="logo-img" />
+        </span>
+        <span class="logo-text">Pey<span>miz</span></span>
+      </a>
+      <nav class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#product">Product &amp; Benefits</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2026 Peymiz. One link. One dashboard.</p>
     </div>
   </footer>
 
