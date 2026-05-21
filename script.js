@@ -66,7 +66,7 @@ function animateCursor() {
 }
 animateCursor();
 
-document.querySelectorAll('a, button, .menu-card, .mini-card, .feature, .problem-card, .feat-card, .tab, .why-item, .audience-card').forEach(el => {
+document.querySelectorAll('a, button, .menu-card, .mini-card, .feature, .problem-card, .feat-card, .tab, .price-card, .pillar').forEach(el => {
   el.addEventListener('mouseenter', () => cursor && cursor.classList.add('grow'));
   el.addEventListener('mouseleave', () => cursor && cursor.classList.remove('grow'));
 });
@@ -91,6 +91,8 @@ function onScroll() {
   updateActiveLink();
   parallax();
   heroParallax();
+  scrollSections();
+  aboutParallax();
 }
 
 window.addEventListener('scroll', onScroll, { passive: true });
@@ -139,6 +141,7 @@ if (menuToggle && navLinksEl) {
 }
 
 // ====== REVEAL ON SCROLL ======
+const revealTypes = ['left', 'right', 'scale', 'rotate', 'blur'];
 const reveals = document.querySelectorAll('[data-reveal]');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -147,18 +150,31 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 reveals.forEach((el, i) => {
-  if (i % 4 === 1) el.classList.add('delay-1');
-  if (i % 4 === 2) el.classList.add('delay-2');
-  if (i % 4 === 3) el.classList.add('delay-3');
+  const type = el.getAttribute('data-reveal');
+  if (type && revealTypes.includes(type)) {
+    el.classList.add('reveal-' + type);
+  }
+  el.classList.add('delay-' + ((i % 3) + 1));
   observer.observe(el);
 });
 
-// Staggered reveal for feature cards
 document.querySelectorAll('.feat-card').forEach((el, i) => {
-  el.style.transitionDelay = (i * 0.05) + 's';
+  el.style.transitionDelay = (i * 0.06) + 's';
+});
+
+document.querySelectorAll('.problem-card').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.1) + 's';
+});
+
+document.querySelectorAll('.price-card').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.15) + 's';
+});
+
+document.querySelectorAll('.t-item').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.12) + 's';
 });
 
 // ====== COUNTERS ======
@@ -185,27 +201,27 @@ const counterObserver = new IntersectionObserver((entries) => {
 counters.forEach(c => counterObserver.observe(c));
 
 // ====== HERO PARALLAX ======
-const heroWrap = document.getElementById('heroWrap');
+const heroBrand = document.getElementById('heroBrand');
 
 function heroParallax() {
-  if (!heroWrap) return;
+  if (!heroBrand) return;
   const sy = window.scrollY;
   if (sy < window.innerHeight) {
-    heroWrap.style.transform = `translateY(${sy * 0.15}px) rotate(${sy * -0.015}deg)`;
+    heroBrand.style.transform = `translateY(${sy * 0.12}px)`;
   }
 }
 
-// ====== MOUSE TILT ON HERO ======
-const heroVisual = document.querySelector('.hero-visual');
-if (heroVisual && heroWrap) {
-  heroVisual.addEventListener('mousemove', (e) => {
-    const rect = heroVisual.getBoundingClientRect();
+// ====== MOUSE TILT ON HERO BRAND ======
+const heroHead = document.querySelector('.hero-head');
+if (heroHead && heroBrand) {
+  heroHead.addEventListener('mousemove', (e) => {
+    const rect = heroHead.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    heroWrap.style.transform = `perspective(900px) rotateY(${x * 10}deg) rotateX(${y * -10}deg)`;
+    heroBrand.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${y * -8}deg)`;
   });
-  heroVisual.addEventListener('mouseleave', () => {
-    heroWrap.style.transform = '';
+  heroHead.addEventListener('mouseleave', () => {
+    heroBrand.style.transform = '';
   });
 }
 
@@ -223,6 +239,32 @@ function parallax() {
   if (pBg) pBg.style.transform = `translateY(${offset * 0.2}px)`;
   if (pMid) pMid.style.transform = `translateY(${offset * 0.5}px)`;
   if (pFront) pFront.style.transform = `translateY(${offset * 0.8}px)`;
+
+  const pricing = document.querySelector('.pricing-glow');
+  if (pricing) {
+    const pRect = document.querySelector('.pricing')?.getBoundingClientRect();
+    if (pRect && pRect.top < window.innerHeight && pRect.bottom > 0) {
+      pricing.style.transform = `translateY(${pRect.top * 0.15}px) scale(${1 + Math.min(0.08, Math.abs(pRect.top) * 0.0001)})`;
+    }
+  }
+}
+
+function aboutParallax() {
+  const visual = document.querySelector('.about-visual');
+  if (!visual) return;
+  const rect = visual.getBoundingClientRect();
+  if (rect.top >= window.innerHeight || rect.bottom <= 0) return;
+  const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+  visual.style.transform = `translateY(${(0.5 - progress) * 40}px) rotate(${(0.5 - progress) * 2}deg)`;
+}
+
+function scrollSections() {
+  document.querySelectorAll('[data-scroll-section]').forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top >= window.innerHeight || rect.bottom <= 0) return;
+    const shift = Math.max(-24, Math.min(24, rect.top * 0.05));
+    section.style.transform = `translateY(${shift}px)`;
+  });
 }
 
 // ====== BUSINESS MODE TABS ======
@@ -248,7 +290,7 @@ tabs.forEach(tab => {
 });
 
 // ====== 3D TILT ON CARDS ======
-document.querySelectorAll('.menu-card-inner, .problem-card, .feat-card').forEach(card => {
+document.querySelectorAll('.menu-card-inner, .problem-card, .feat-card, .price-card, .pillar').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -264,9 +306,9 @@ document.querySelectorAll('.menu-card-inner, .problem-card, .feat-card').forEach
 const startBtn = document.getElementById('startBtn');
 if (startBtn) {
   startBtn.addEventListener('click', () => {
-    const contact = document.getElementById('contact');
-    if (contact) {
-      const y = contact.getBoundingClientRect().top + window.scrollY - 80;
+    const pricing = document.getElementById('pricing');
+    if (pricing) {
+      const y = pricing.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   });
@@ -303,8 +345,12 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.solution, .value-section, .problem, .why').forEach(section => {
+document.querySelectorAll('.solution, .problem, .pricing, .features-section').forEach(section => {
   sectionObserver.observe(section);
+});
+
+document.querySelectorAll('section').forEach((section, i) => {
+  if (i > 0) section.setAttribute('data-scroll-section', '');
 });
 
 // ====== INIT ======
