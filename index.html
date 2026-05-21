@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peymiz — One Simple Link for Your Small Business</title>
+  <meta name="description" content="Peymiz helps small businesses manage orders, appointments, customer messages, and business activity from one clean dashboard." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/logo-icon-light.png" />
+  <link rel="apple-touch-icon" href="images/logo-icon-purple.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-icon">
+      <img src="images/logo-icon-purple.png" alt="" />
+      <div class="loader-ring"></div>
+    </div>
+    <p class="loader-text">Setting up your business page...</p>
+  </div>
+
+  <div class="particles-bg" aria-hidden="true">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+    <span class="particle p6"></span>
+    <span class="particle p7"></span>
+    <span class="particle p8"></span>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">
+          <img src="images/logo-icon-purple.png" alt="Peymiz" class="logo-img-dark" />
+          <img src="images/logo-icon-light.png" alt="Peymiz" class="logo-img-light" />
+        </span>
+        <span class="logo-text">Pey<span>miz</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#problem">Problem</a>
+        <a href="#how">How It Works</a>
+        <a href="#modes">Business Modes</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="btn btn-primary nav-cta" id="startBtn">Get Started</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-waves">
+      <svg class="wave wave-left" viewBox="0 0 600 800" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 C160,120 60,300 140,460 C220,620 80,720 0,800 L0,0 Z"/>
+        <path d="M0,0 C120,140 30,320 110,500 C190,660 50,760 0,800 L0,0 Z"/>
+      </svg>
+      <svg class="wave wave-right" viewBox="0 0 700 900" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M700,0 C520,120 640,260 560,420 C480,580 620,720 700,900 L700,0 Z"/>
+        <path d="M700,40 C540,160 660,300 580,460 C500,620 640,760 700,900 L700,40 Z"/>
+        <path d="M700,80 C560,200 680,340 600,500 C520,660 660,800 700,900 L700,80 Z"/>
+      </svg>
+    </div>
+
+    <div class="dots">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow" data-reveal>One simple link for your small business</span>
+        <h1 class="hero-title" data-reveal>
+          <span class="title-line">Manage</span>
+          <span class="title-line accent">Your Business</span>
+        </h1>
+        <p class="hero-sub" data-reveal>
+          Peymiz helps small businesses manage orders, appointments, customer messages,
+          and business activity from one clean dashboard. No expensive custom app.
+          No complicated setup. Just one simple digital page for your business.
+        </p>
+
+        <div class="mini-menu" data-reveal>
+          <h3 class="mini-title-1">Quick wins</h3>
+          <div class="mini-card">
+            <div class="mini-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <h4>One Shareable Link</h4>
+            <p>Send customers one link to order, book, or message you.</p>
+          </div>
+          <div class="mini-card">
+            <div class="mini-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <h4>One Dashboard</h4>
+            <p>Track orders, appointments, and messages in one place.</p>
+          </div>
+          <div class="mini-card">
+            <div class="mini-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Fast Setup</h4>
+            <p>Create your business page in minutes, not months.</p>
+          </div>
+        </div>
+
+        <div class="hero-cta" data-reveal>
+          <a href="#contact" class="btn btn-primary btn-big">
+            <span>Start With Peymiz</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#how" class="btn btn-ghost">See How It Works</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="hero-wrap" id="heroWrap">
+          <div class="hero-glow"></div>
+          <img src="images/hero-storefront.png" alt="Peymiz storefront app icon" class="hero-image" id="heroImage" />
+          <div class="hero-shadow"></div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <div class="mouse"><div class="wheel"></div></div>
+      <span>Scroll to explore</span>
+    </a>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>★ One Business Page</span>
+      <span>★ One Shareable Link</span>
+      <span>★ One Dashboard</span>
+      <span>★ Product Store</span>
+      <span>★ Appointment Booking</span>
+      <span>★ Customer Messages</span>
+      <span>★ Built for Small Business</span>
+      <span>★ One Business Page</span>
+      <span>★ One Shareable Link</span>
+      <span>★ One Dashboard</span>
+      <span>★ Product Store</span>
+      <span>★ Appointment Booking</span>
+      <span>★ Customer Messages</span>
+      <span>★ Built for Small Business</span>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-visual" data-reveal>
+        <div class="img-stack">
+          <div class="img-card img-1">
+            <img src="images/logo-icon-purple.png" alt="Peymiz app icon" />
+          </div>
+          <div class="img-card img-2">
+            <img src="images/logo-wordmark.png" alt="Peymiz wordmark" />
+          </div>
+          <div class="img-card img-3">
+            <img src="images/logo-icon-light.png" alt="Peymiz logo" />
+          </div>
+          <div class="years-badge">
+            <strong>1</strong>
+            <span>Link for <br/> Everything</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="section-eyebrow" data-reveal>What is Peymiz?</span>
+        <h2 class="section-title" data-reveal>A simple platform for <em>every</em> small business.</h2>
+        <p class="section-lead" data-reveal>
+          Peymiz is a simple platform that gives every small business its own digital business page,
+          shareable link, and management dashboard. Customers can order, book appointments,
+          or contact the business in one place.
+        </p>
+        <div class="features">
+          <div class="feature" data-reveal>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div>
+              <h4>Digital Business Page</h4>
+              <p>Your own professional page — no website builder or developer needed.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div>
+              <h4>Shareable Customer Link</h4>
+              <p>One link for WhatsApp, Instagram, business cards, and everywhere else.</p>
+            </div>
+          </div>
+          <div class="feature" data-reveal>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <h4>Owner Dashboard</h4>
+              <p>Manage products, appointments, messages, and activity from one clean view.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat" data-reveal>
+        <strong class="counter" data-target="1">0</strong>
+        <span>Business page</span>
+      </div>
+      <div class="stat" data-reveal>
+        <strong class="counter" data-target="1">0</strong>
+        <span>Shareable link</span>
+      </div>
+      <div class="stat" data-reveal>
+        <strong class="counter" data-target="1">0</strong>
+        <span>Dashboard</span>
+      </div>
+      <div class="stat" data-reveal>
+        <strong class="counter" data-target="2">0</strong>
+        <span>Business modes</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem" id="problem">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow" data-reveal>The Problem</span>
+        <h2 class="section-title center" data-reveal>Running a small business shouldn't feel <em>chaotic</em></h2>
+        <p class="section-lead center" data-reveal>
+          Small businesses often manage everything through WhatsApp, phone calls, notes, and spreadsheets.
+        </p>
+      </div>
+      <div class="problem-grid">
+        <article class="problem-card" data-reveal>
+          <div class="problem-icon">01</div>
+          <h3>Orders get lost</h3>
+          <p>Messages buried in chats, handwritten notes, and scattered spreadsheets make it easy to miss sales.</p>
+        </article>
+        <article class="problem-card" data-reveal>
+          <div class="problem-icon">02</div>
+          <h3>Appointments become messy</h3>
+          <p>Double bookings, forgotten slots, and back-and-forth scheduling waste time every day.</p>
+        </article>
+        <article class="problem-card" data-reveal>
+          <div class="problem-icon">03</div>
+          <h3>Messages are hard to track</h3>
+          <p>Customer questions spread across apps with no single place to follow up.</p>
+        </article>
+        <article class="problem-card" data-reveal>
+          <div class="problem-icon">04</div>
+          <h3>Custom apps are expensive</h3>
+          <p>Building your own app takes months and costs far more than most small businesses can afford.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution" id="solution">
+    <div class="container solution-inner" data-reveal>
+      <span class="section-eyebrow light" data-reveal>The Solution</span>
+      <h2 class="section-title light center" data-reveal>Peymiz gives you a fast, simple, and <em>professional</em> way to manage customer activity.</h2>
+      <div class="solution-pillars">
+        <div class="pillar" data-reveal>
+          <strong>One</strong>
+          <span>Business Page</span>
+        </div>
+        <div class="pillar" data-reveal>
+          <strong>One</strong>
+          <span>Shareable Link</span>
+        </div>
+        <div class="pillar" data-reveal>
+          <strong>One</strong>
+          <span>Dashboard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="how">
+    <div class="story-parallax">
+      <div class="parallax-layer p-bg"></div>
+      <div class="parallax-layer p-mid"></div>
+      <div class="parallax-layer p-front"></div>
+    </div>
+    <div class="container story-content">
+      <span class="section-eyebrow light" data-reveal>How It Works</span>
+      <h2 class="section-title light center" data-reveal>Four steps to a <em>professional</em> business page</h2>
+      <div class="timeline">
+        <div class="t-line"></div>
+        <div class="t-item" data-reveal>
+          <div class="t-dot">01</div>
+          <div class="t-body">
+            <h4>Create your business page</h4>
+            <p>Add your business name and choose your link. Your digital storefront is ready in minutes.</p>
+          </div>
+        </div>
+        <div class="t-item" data-reveal>
+          <div class="t-dot">02</div>
+          <div class="t-body">
+            <h4>Choose your business mode</h4>
+            <p>Use Product Store for orders or Appointment Booking for services — switch anytime.</p>
+          </div>
+        </div>
+        <div class="t-item" data-reveal>
+          <div class="t-dot">03</div>
+          <div class="t-body">
+            <h4>Share your link</h4>
+            <p>Send your business link to customers via WhatsApp, social media, or anywhere you connect.</p>
+          </div>
+        </div>
+        <div class="t-item" data-reveal>
+          <div class="t-dot">04</div>
+          <div class="t-body">
+            <h4>Manage everything</h4>
+            <p>Track orders, appointments, and customer messages from one simple dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu modes" id="modes">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow" data-reveal>Business Modes</span>
+        <h2 class="section-title center" data-reveal>Built for <em>products</em> or <em>services</em></h2>
+        <p class="section-lead center" data-reveal>
+          Choose the mode that fits your business — or switch between them as you grow.
+        </p>
+      </div>
+
+      <div class="menu-tabs" data-reveal>
+        <button class="tab active" data-cat="store">Product Store</button>
+        <button class="tab" data-cat="booking">Appointment Booking</button>
+      </div>
+
+      <div class="menu-grid" id="modesGrid">
+        <article class="menu-card" data-cat="store" data-reveal>
+          <div class="menu-card-inner">
+            <div class="menu-icon">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <div class="menu-info">
+              <h3>Bakeries &amp; Food</h3>
+              <p>Show products, deals, and prices. Receive customer orders directly to your dashboard.</p>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card" data-cat="store" data-reveal>
+          <div class="menu-card-inner">
+            <div class="menu-icon">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H21.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/><path d="M4 10v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10"/></svg>
+            </div>
+            <div class="menu-info">
+              <h3>Shops &amp; Clothing</h3>
+              <p>Display your catalog with images, prices, and availability — all from one link.</p>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card" data-cat="store" data-reveal>
+          <div class="menu-card-inner">
+            <div class="menu-icon">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div class="menu-info">
+              <h3>Gifts &amp; Home Sellers</h3>
+              <p>Perfect for home-based sellers who need a professional way to take orders online.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card hidden" data-cat="booking" data-reveal>
+          <div class="menu-card-inner">
+            <div class="menu-icon">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+            </div>
+            <div class="menu-info">
+              <h3>Barbers &amp; Salons</h3>
+              <p>Show available times and booked slots. Let customers book appointments easily.</p>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card hidden" data-cat="booking" data-reveal>
+          <div class="menu-card-inner">
+            <div class="menu-icon">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="menu-info">
+              <h3>Consultants &amp; Teachers</h3>
+              <p>Manage sessions, meetings, and lessons with a clean booking experience.</p>
+            </div>
+          </div>
+        </article>
+        <article class="menu-card hidden" data-cat="booking" data-reveal>
+          <div class="menu-card-inner">
+            <div class="menu-icon">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <div class="menu-info">
+              <h3>Treatments &amp; Meetings</h3>
+              <p>Ideal for wellness, beauty, and service businesses that run on appointments.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="audience" id="audience">
+    <div class="container">
+      <div class="audience-grid">
+        <article class="audience-card customers" data-reveal>
+          <span class="section-eyebrow">For Customers</span>
+          <h2 class="section-title">A clean and <em>simple</em> experience</h2>
+          <p class="section-lead">Customers open your link and immediately know what to do:</p>
+          <ul class="audience-list">
+            <li data-reveal><span>01</span> Order a product</li>
+            <li data-reveal><span>02</span> Book an appointment</li>
+            <li data-reveal><span>03</span> Send a message</li>
+          </ul>
+        </article>
+        <article class="audience-card owners" data-reveal>
+          <span class="section-eyebrow">For Business Owners</span>
+          <h2 class="section-title">Everything in <em>one place</em></h2>
+          <p class="section-lead">Manage your entire business from a single dashboard:</p>
+          <ul class="audience-list">
+            <li data-reveal><span>01</span> Orders &amp; appointments</li>
+            <li data-reveal><span>02</span> Products &amp; messages</li>
+            <li data-reveal><span>03</span> Store status &amp; activity</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow" data-reveal>Why Peymiz?</span>
+        <h2 class="section-title center" data-reveal>Simple. Fast. Built for <em>you</em>.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item" data-reveal><span>✦</span> Simple to understand</div>
+        <div class="why-item" data-reveal><span>✦</span> Fast to set up</div>
+        <div class="why-item" data-reveal><span>✦</span> Built for small businesses</div>
+        <div class="why-item" data-reveal><span>✦</span> No expensive custom app</div>
+        <div class="why-item" data-reveal><span>✦</span> No complicated software</div>
+        <div class="why-item" data-reveal><span>✦</span> Flexible for products or appointments</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow" data-reveal>Key Features</span>
+        <h2 class="section-title center" data-reveal>Everything you need to run your <em>business</em></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feat-card" data-reveal><div class="feat-icon">📄</div><h4>Digital business page</h4></div>
+        <div class="feat-card" data-reveal><div class="feat-icon">🔗</div><h4>Shareable customer link</h4></div>
+        <div class="feat-card" data-reveal><div class="feat-icon">🛍️</div><h4>Product catalog</h4></div>
+        <div class="feat-card" data-reveal><div class="feat-icon">📅</div><h4>Appointment booking</h4></div>
+        <div class="feat-card" data-reveal><div class="feat-icon">💬</div><h4>Customer messages</h4></div>
+        <div class="feat-card" data-reveal><div class="feat-icon">📊</div><h4>Owner dashboard</h4></div>
+        <div class="feat-card" data-reveal><div class="feat-icon">🔄</div><h4>Store mode switch</h4></div>
+        <div class="feat-card" data-reveal><div class="feat-icon">⚡</div><h4>Smart links</h4></div>
+        <div class="feat-card" data-reveal><div class="feat-icon">🛡️</div><h4>Admin control</h4></div>
+        <div class="feat-card" data-reveal><div class="feat-icon">☁️</div><h4>Secure cloud database</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="value-section">
+    <div class="container value-inner" data-reveal>
+      <img src="images/logo-wordmark.png" alt="Peymiz" class="value-logo" />
+      <h2 class="section-title light center">The Main Value</h2>
+      <p class="value-text">Peymiz helps small businesses look professional, receive customers, and manage daily activity — without building their own app.</p>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <div class="container cta-inner">
+      <div class="cta-content" data-reveal>
+        <h2 class="section-title light">Start With <em>Peymiz</em></h2>
+        <p>One link. One dashboard. Simple business management. Join the waitlist and be first to launch your business page.</p>
+      </div>
+      <form class="cta-form" data-reveal onsubmit="event.preventDefault(); this.querySelector('button').textContent='You\'re on the list ✦'; this.querySelector('input').value=''">
+        <input type="email" placeholder="Your email address" required />
+        <button class="btn btn-primary" type="submit">Get Early Access</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#home" class="logo logo-foot">
+          <span class="logo-mark">
+            <img src="images/logo-icon-purple.png" alt="Peymiz" class="logo-img-dark" />
+            <img src="images/logo-icon-light.png" alt="Peymiz" class="logo-img-light" />
+          </span>
+          <span class="logo-text">Pey<span>miz</span></span>
+        </a>
+        <p>One simple link for your small business. Manage orders, appointments, and customer messages from one clean dashboard.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 5.8c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1A4.1 4.1 0 0 0 11.8 9c0 .3 0 .6.1.9A11.7 11.7 0 0 1 3.4 5.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4-.7.2-1.4.2-2 .1.5 1.7 2.1 2.9 4 2.9A8.2 8.2 0 0 1 2 19.4 11.6 11.6 0 0 0 8.3 21c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#about">About Peymiz</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#modes">Business Modes</a></li>
+          <li><a href="#features">Features</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>For Business</h4>
+        <ul>
+          <li><a href="#modes">Product Store</a></li>
+          <li><a href="#modes">Appointment Booking</a></li>
+          <li><a href="#contact">Get Started</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>hello@peymiz.com</p>
+        <form class="foot-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent ✓'; this.reset()">
+          <textarea placeholder="Tell us about your business..." rows="3" required></textarea>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Peymiz. One link. One dashboard. Simple business management.</p>
+        <div>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
