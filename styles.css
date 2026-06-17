@@ -36,6 +36,7 @@
   --wave-4: rgba(0, 86, 255, 0.10);
   --nav-bg: rgba(10, 6, 20, 0.85);
   --card-bg: linear-gradient(180deg, rgba(138, 79, 255, 0.07), rgba(10, 6, 20, 0.4));
+  --card-border: rgba(138, 79, 255, 0.15);
   --shadow: rgba(0, 0, 0, 0.5);
   --scrollbar-track: #0a0614;
   --icon-sun-display: block;
@@ -60,8 +61,10 @@
   --wave-3: rgba(0, 86, 255, 0.10);
   --wave-4: rgba(0, 86, 255, 0.06);
   --nav-bg: rgba(250, 248, 255, 0.88);
-  --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(240, 235, 255, 0.7));
-  --shadow: rgba(138, 79, 255, 0.15);
+  --line: rgba(138, 79, 255, 0.1);
+  --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(237, 228, 255, 0.82));
+  --card-border: rgba(138, 79, 255, 0.1);
+  --shadow: rgba(138, 79, 255, 0.1);
   --scrollbar-track: #f0ebff;
   --icon-sun-display: none;
   --icon-moon-display: block;
@@ -533,7 +536,7 @@ section { position: relative; padding: 120px 0; }
 .section-lead.center { margin: 0 auto 40px; text-align: center; }
 .section-head { margin-bottom: 60px; text-align: center; }
 
-/* Product & Benefits */
+/* Who are we */
 .product { overflow: hidden; }
 .benefits-grid {
   display: grid;
@@ -577,9 +580,52 @@ section { position: relative; padding: 120px 0; }
 }
 
 [data-theme="light"] .benefit-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f4efff 100%);
-  border-color: rgba(138, 79, 255, 0.16);
-  box-shadow: 0 10px 32px rgba(138, 79, 255, 0.08);
+  background: linear-gradient(180deg, #faf7ff 0%, #ebe3ff 100%);
+  border-color: rgba(138, 79, 255, 0.12);
+  box-shadow: 0 10px 32px rgba(138, 79, 255, 0.06);
+}
+
+[data-theme="light"] .price-card {
+  background: linear-gradient(180deg, #faf7ff 0%, #e8deff 100%);
+  border-color: rgba(138, 79, 255, 0.12);
+  box-shadow: 0 12px 36px rgba(138, 79, 255, 0.07);
+}
+
+[data-theme="light"] .price-card::before {
+  background: linear-gradient(135deg, rgba(138, 79, 255, 0.05), transparent 60%);
+}
+
+[data-theme="light"] .hero-content {
+  background: linear-gradient(165deg, #f6f1ff 0%, #ebe2ff 52%, #e2d6ff 100%);
+  border-color: rgba(138, 79, 255, 0.14);
+  box-shadow: 0 20px 56px rgba(138, 79, 255, 0.1);
+}
+
+[data-theme="light"] .hero-tagline {
+  color: #1a1035;
+}
+
+[data-theme="light"] .hero-sub {
+  color: #5c4a78;
+}
+
+[data-theme="light"] .hero-content .btn-ghost {
+  color: #1a1035;
+  border-color: rgba(138, 79, 255, 0.22);
+}
+
+[data-theme="light"] .hero-content .btn-ghost:hover {
+  background: rgba(138, 79, 255, 0.08);
+}
+
+[data-theme="light"] .logo {
+  background: linear-gradient(165deg, #f3edff 0%, #e6dbff 100%);
+  border-color: rgba(138, 79, 255, 0.14);
+}
+
+[data-theme="light"] .contact-form {
+  background: linear-gradient(180deg, #faf7ff 0%, #ebe3ff 100%);
+  border-color: rgba(138, 79, 255, 0.12);
 }
 
 [data-theme="light"] .benefit-card h3 {
@@ -620,6 +666,48 @@ section { position: relative; padding: 120px 0; }
   font-size: 15px;
   color: var(--muted);
   font-weight: 500;
+}
+
+/* App CTA */
+.app-cta-section {
+  padding: 0 0 72px;
+}
+
+.app-cta-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.app-cta-btn {
+  width: min(100%, 620px);
+  justify-content: center;
+  gap: 18px;
+  padding: 28px 48px 28px 36px;
+  min-height: 88px;
+  font-size: clamp(24px, 3.6vw, 34px);
+  font-weight: 700;
+  border-radius: 999px;
+  box-shadow: 0 16px 48px rgba(138, 79, 255, 0.45);
+}
+
+.app-cta-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.22));
+}
+
+.app-cta-label {
+  flex: 1;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+
+.app-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 56px rgba(138, 79, 255, 0.58);
 }
 
 /* Contact */
@@ -812,6 +900,10 @@ section { position: relative; padding: 120px 0; }
 .pricing-grid {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
   max-width: 860px; margin: 0 auto;
+}
+.pricing-grid--three {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1120px;
 }
 .price-card {
   padding: 42px 36px; border-radius: var(--radius);
@@ -1146,6 +1238,10 @@ footer {
 @media (max-width: 1100px) {
   section { padding: 90px 0; }
   .features-grid { grid-template-columns: repeat(3, 1fr); }
+  .pricing-grid--three {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1165,7 +1261,8 @@ footer {
   .contact-grid { grid-template-columns: 1fr; gap: 36px; }
   .contact-lead { max-width: none; }
 
-  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .pricing-grid,
+  .pricing-grid--three { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .price-card.featured { transform: none; }
   .price-card.featured:hover { transform: translateY(-10px); }
 
